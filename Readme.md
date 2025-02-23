@@ -1,6 +1,5 @@
 # configure termux with vnc
 
-
 ---
 
 # **Setting Up JWM & Zsh Like Kali Linux (Termux Guide)**
@@ -10,26 +9,19 @@
 1. **Install JWM & Required Packages**
     
     ```
-    sh
-    CopyEdit
-    pkg install jwm xorg-xsetroot x11-repo -y
-    pkg install xclip xsel -y
-    pkg install feh -y
     
+    pkg install jwm x11-repo feh  xclip xsel  -y
     ```
     
 2. **Create JWM Config File**
     
     ```
-    sh
-    CopyEdit
-    mkdir -p ~/.jwm
-    cp /data/data/com.termux/files/usr/etc/jwm/system.jwmrc ~/.jwm/jwmrc
     nano ~/.jwm/jwmrc
+    ****
     
     ```
     
-3. **Modify `~/.jwm/jwmrc` with:**
+3. **Modify `~/.jwmrc` with:**
     - **Taskbar** (Bottom)
     - **Firefox & QTerminal**
     - **Right-click for Menu**
@@ -38,7 +30,7 @@
     ```xml
     <JWM>
     
-        <!-- Set Wallpaper -->
+        <!-- Set Wallpaper ->
         <StartupCommand>feh --bg-scale ~/wall.jpg</StartupCommand>
     
         <!-- Enable Clipboard -->
@@ -97,11 +89,10 @@
     
     ```
     
-4. **Apply Changes**
+4. **to Apply Changes**
     
     ```
-    sh
-    CopyEdit
+    
     jwm -restart
     
     ```
@@ -109,13 +100,45 @@
 
 ---
 
+- **Configure vnc with jwm**
+After the server is set up, configure it to use **JWM** as the window manager. Create or edit the `.vnc/xstartup` file to configure the window manager:
+    
+    ```bash
+    
+    nano ~/.vnc/xstartup
+    
+    ```
+    
+    Add the following lines to start JWM:
+    
+    ```bash
+    
+    #!/bin/sh
+    xrdb $HOME/.Xresources
+    xsetroot -solid grey
+    export XDG_SESSION_TYPE=x11
+    export XDG_CURRENT_DESKTOP=GNOME
+    jwm &
+    
+    ```
+    
+- **Start the VNC Server with JWM**
+Restart the VNC server to apply the changes:
+    
+    ```bash
+    
+    vncserver -kill :1
+    vncserver :1
+    
+    ```
+    
+
 ### **2️⃣ Installing & Configuring Zsh (Kali Style)**
 
 1. **Install Zsh**
     
     ```bash
-    sh
-    CopyEdit
+    
     pkg install zsh -y
     
     git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions\ngit clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting\n
@@ -130,8 +153,6 @@
 2. **Set Kali-style Prompt**Add this line:Apply:
     
     ```
-    sh
-    CopyEdit
     nano ~/.zshrc
     
     ```
@@ -249,8 +270,7 @@
     ```
     
     ```
-    sh
-    CopyEdit
+    
     source ~/.zshrc
     
     ```
@@ -260,7 +280,7 @@
 
 ---
 
-### **4️⃣ Setting Wallpaper**
+### **mannualy Setting Wallpaper if automatically doesnt work**
 
 ```xml
 feh --bg-scale ~/wall.png
