@@ -10,7 +10,7 @@
     
     ```
     
-    pkg install jwm x11-repo feh tigervnc -y
+    pkg install jwm xsel x11-repo feh tigervnc -y
     ```
     
 2. **Create JWM Config File**
