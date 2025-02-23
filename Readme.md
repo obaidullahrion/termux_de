@@ -1,6 +1,5 @@
 # configure termux with vnc
 
-Here's a clean and organized note of everything you did, so you can save it for later.
 
 ---
 
