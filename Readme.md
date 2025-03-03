@@ -106,12 +106,17 @@ After the server is set up, configure it to use **JWM** as the window manager. C
     
     ```bash
     
-    #!/bin/sh
-    xrdb $HOME/.Xresources
-    xsetroot -solid grey
-    export XDG_SESSION_TYPE=x11
-    export XDG_CURRENT_DESKTOP=GNOME
-    jwm &
+#!/bin/sh
+xrdb $HOME/.Xresources
+xsetroot -solid grey
+export XDG_SESSION_TYPE=x11
+export XDG_CURRENT_DESKTOP=JWM  # Change this from GNOME to JWM
+
+# Add feh to set the wallpaper
+feh --bg-scale ~/wallpaper.jpg &
+
+exec jwm
+
     
     ```
     
