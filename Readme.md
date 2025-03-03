@@ -124,6 +124,15 @@ Restart the VNC server to apply the changes:
     vncserver :1
     
     ```
+
+
     
+### **mannualy Setting Wallpaper if automatically doesnt work**
+
+```xml
+feh --bg-scale ~/wall.png
+
+```
+
 
 
