@@ -105,7 +105,8 @@ After the server is set up, configure it to use **JWM** as the window manager. C
     Add the following lines to start JWM:
     
 
-    '''#!/bin/sh
+```
+#!/bin/sh
 xrdb $HOME/.Xresources
 xsetroot -solid grey
 export XDG_SESSION_TYPE=x11
@@ -115,7 +116,8 @@ export XDG_CURRENT_DESKTOP=JWM  # Change this from GNOME to JWM
 feh --bg-scale ~/wallpaper.jpg &
 
 exec jwm
-'''
+```
+
     
 - **Start the VNC Server with JWM**
 Restart the VNC server to apply the changes:
