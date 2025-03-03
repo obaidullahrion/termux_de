@@ -13,15 +13,8 @@
     pkg install jwm xsel x11-repo feh tigervnc -y
     ```
     
-2. **Create JWM Config File**
     
-    ```
-    nano ~/.jwm/jwmrc
-    ****
-    
-    ```
-    
-3. **Modify `~/.jwmrc` with:**
+3. **create and Modify `~/.jwmrc` with:**
     - **Taskbar** (Bottom)
     - **Firefox & QTerminal**
     - **Right-click for Menu**
